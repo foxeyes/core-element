@@ -1,5 +1,5 @@
 
-# CoreElement - fastest and easiest way to build modern web-application UI
+# CoreElement - fastest and easiest way to build modern web UI
 
 ### Key Functions
 
