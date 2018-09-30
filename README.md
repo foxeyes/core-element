@@ -1,7 +1,7 @@
 
 # CoreElement - fastest and easiest way to build modern web-application UI
 
-### Functions
+### Key Functions
 
 * Component creation and registration in browser
 * Work with templates (native syntax)
@@ -11,7 +11,7 @@
 * Property change callbacks
 * Work with Shadow DOM polyfills (FireFox < 63; Edge)
 
-### Concept basics:
+### Concept Basics:
 
 * Small and simple
 * Flexible and extensible
