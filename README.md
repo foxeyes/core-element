@@ -118,7 +118,7 @@ Template bindings can be described in key-value format. So, key - is a own eleme
 
 ## External Bindings
 
-External bindings is intended for external connections creation (outside of the templates). They can be used for regular HTML-pages to establish a connection between custom elements, without coding.
+External bindings is intended for external connections creation (outside of the templates). They can be used for regular HTML-pages to establish a connection between custom elements. Without coding.
 
 Example:
 ```html
