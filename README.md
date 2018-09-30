@@ -13,8 +13,8 @@
 
 ### Concept basics:
 
-* Very small and simple
-* Very flexible and extensible
+* Small and simple
+* Flexible and extensible
 * Based on modern web standards: Custom Elements and Shadow DOM
 * Native DOM APIs - are cool!
 * Effective updates for DOM nodes without fatty JavaScript abstractions
@@ -100,7 +100,7 @@
 `connectedCallback()`
 - Component added to DOM
 - Child elements and parent nodes - are available
-- Browser starts to draw element
+- Browser starts to draw component
 
 `disconnectedCallback()`
 - Component removed from DOM
