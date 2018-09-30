@@ -1,7 +1,7 @@
 
 # CoreElement - fastest and easiest way to build modern web-application UI
 
-### What for?
+### Functions
 
 * Component creation and registration in browser
 * Work with templates (native syntax)
