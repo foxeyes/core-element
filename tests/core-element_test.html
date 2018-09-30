@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Core Element Test</title>
+</head>
+<script type="module">
+import { CoreElement } from '../src/core-element/core-element.js';
+class TestElement extends CoreElement {}
+TestElement.styles = `
+<style>
+  :host {
+    display: block;
+  }
+  .cls {
+    color: #00c;
+  }
+  [size="big"] {
+    font-size: 24px;
+  }
+</style>
+`;
+TestElement.template = `
+<div bind="size: other.size; className: other.class">
+  <span bind="textContent: name"></span>&nbsp;<span bind="textContent: secondName"></span>
+</div>
+<div id="repeat-ip"></div>
+`;
+TestElement.is = 'test-element';
+</script>
+<body>
+  <input type="text">
+
+  <script type="module">
+    let startTime = Date.now();
+    let elemetsTotal = 100;
+
+    for (let i = 0; i < elemetsTotal; i++) {
+      let tEl = document.createElement('test-element');
+      tEl.state = {
+        name: 'John',
+        secondName: 'Snow',
+        other: {
+          class: 'cls',
+          size: 'big',
+        },
+      };
+      document.body.appendChild(tEl);
+    }
+
+    let allArr = document.querySelectorAll('test-element');
+
+    let input = document.querySelector('input');
+    input.oninput = () => {
+      let start = Date.now();
+      let timeout = 160;
+      allArr.forEach(function(el, idx) {
+        el.setStateProperty('name', input.value, timeout);
+      });
+      allArr[allArr.length -1].onStateUpdated = () => {
+        window.requestAnimationFrame(() => {
+          console.log('Elements total: ' + elemetsTotal + '; Update time: ' + (Date.now() - start - timeout) / 1000 + 's');
+        });
+      };
+    };
+
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        console.log('Elements total: ' + elemetsTotal + '; Rendering time: ' + (Date.now() - startTime) / 1000 + 's');
+      });
+    });
+  </script>
+</body>
+</html>
