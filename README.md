@@ -128,7 +128,7 @@ Example:
   <tab-ui value="v3" icon="default">Fish</tab-ui>
 </tabs-ui>
 
-<context-lay bind-id="my-binding" bind-prop="current">
+<tabs-context bind-id="my-binding" bind-prop="current">
   <div ctx="v1">
     CAT
   </div>
@@ -138,7 +138,7 @@ Example:
   <div ctx="v3">
     FISH
   </div>
-</context-lay>
+</tabs-context>
 ```
 
 ## Template Shortcuts
