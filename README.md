@@ -23,7 +23,7 @@
 * Native ES Modules - are best for code decomposition
 * No need for any specific build tools or environment setup
 * OOP - is awesome!
-* Perfomance matter
+* Performance matter
 
 ## Example
 
