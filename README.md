@@ -1,5 +1,5 @@
 
-# CoreElement - fastest and easiest way to build modern web application UI
+# CoreElement - fastest and easiest way to build modern web-application UI
 
 ### What for?
 
@@ -15,7 +15,7 @@
 
 * Small and simple
 * Flexible and extensible
-* Based on modern web standards: Custom Elements and Shadow DOM
+* Based on modern web standards: [Custom Elements and Shadow DOM](https://www.webcomponents.org/specs)
 * Native DOM APIs - are cool!
 * Effective updates for DOM nodes without fatty JavaScript abstractions
 * Native HTML & CSS syntax in templates
