@@ -35,7 +35,7 @@ TestElement.is = 'test-element';
 
   <script type="module">
     let startTime = Date.now();
-    let elemetsTotal = 100;
+    let elemetsTotal = 1000;
 
     for (let i = 0; i < elemetsTotal; i++) {
       let tEl = document.createElement('test-element');
@@ -55,9 +55,9 @@ TestElement.is = 'test-element';
     let input = document.querySelector('input');
     input.oninput = () => {
       let start = Date.now();
-      let timeout = 160;
+      let timeout = 200;
       allArr.forEach(function(el, idx) {
-        el.setStateProperty('name', input.value, timeout);
+        el.setStatePropertyLater('name', input.value, timeout);
       });
       allArr[allArr.length -1].onStateUpdated = () => {
         window.requestAnimationFrame(() => {
