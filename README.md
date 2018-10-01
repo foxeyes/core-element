@@ -13,7 +13,7 @@
 
 ### Concept Basics:
 
-* Small and simple
+* Small and simple (KISS)
 * Flexible and extensible
 * Based on modern web standards: [Custom Elements and Shadow DOM](https://www.webcomponents.org/specs)
 * Native DOM APIs - are cool!
