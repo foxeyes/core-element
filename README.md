@@ -90,6 +90,11 @@
 
 <my-component reversed></my-component>
 ```
+
+## Slots
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot
+
 ## Livecycle (native)
 
 `constructor()`
@@ -199,6 +204,12 @@ checkbox.onCheckedChange = (newValue) => { ... };
 ## Browser Support & Polyfills 
 
 https://github.com/WebComponents/webcomponentsjs
+
+### Native Support (caniuse.com)
+
+* [Custom Elements](https://caniuse.com/#feat=custom-elementsv1)
+* [Shadow DOM](https://caniuse.com/#feat=shadowdomv1)
+* [ES Modules](https://caniuse.com/#feat=es6-module)
 
 
 ## Quick Installation
