@@ -17,7 +17,7 @@
 * Flexible and extensible
 * Based on modern web standards: [Custom Elements and Shadow DOM](https://www.webcomponents.org/specs)
 * Native DOM APIs - are cool!
-* Effective updates for DOM nodes without fatty JavaScript abstractions
+* Effective updates for DOM subtree nodes without fatty JavaScript abstractions
 * Native HTML & CSS syntax in templates
 * Code splitting for logic, markup and styles  - is a good practice
 * Native ES Modules - are best for code decomposition
