@@ -201,6 +201,8 @@ checkbox.onCheckedChange = (newValue) => { ... };
 https://github.com/WebComponents/webcomponentsjs
 
 
-## Installation
+## Quick Installation
 
-`git submodule add https://github.com/foxeyes/core-element ./core-element`
+`git submodule add https://github.com/foxeyes/core-element core-element`
+
+[About git submodules](https://blog.github.com/2016-02-01-working-with-submodules/)
