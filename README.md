@@ -95,6 +95,14 @@
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot
 
+## ES Modules
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+
+As your development or prototyping workflow, you can resolve all your project dependencies natively, with a modern browser. You will need local server only.
+
+But it's not recommended for production purposes in complex applications. It's better to use module bundler, such as [webpack](https://webpack.js.org/).
+
 ## Livecycle (native)
 
 `constructor()`
