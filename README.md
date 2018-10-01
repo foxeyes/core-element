@@ -143,7 +143,7 @@ Example:
 
 ## Template Shortcuts
 
-If unique ID of the template element contains symbol `-` - it will be available as component's own property.
+If unique ID of the template element contains the dash symbol (`-`)  - it will be available as component's own property.
 
 Example:
 ```html
@@ -158,7 +158,7 @@ Property `$` - can be used as a shortcut for the component's Shadow DOM.
 
 Example:
 ```javascript
-let divElementsCollection = this.$.querySelectorAll('div');
+let divsCollection = this.$.querySelectorAll('div');
 ```
 
 ## Methods
