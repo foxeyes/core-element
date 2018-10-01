@@ -180,7 +180,7 @@ this.setStateProperty('user.name', 'John');
 Example:
 ```javascript
 this['input-element'].oninput = () => {
-  this.setStatePropertyLater('user.name', 'John', 200);
+  this.setStatePropertyLater('user.name', this['input-element'].value, 200);
 };
 ```
 
