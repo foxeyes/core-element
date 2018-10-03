@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Core App Example</title>
+  <script src="app/index/app-index.js" type="module"></script>
+</head>
+<body>
+  <style>
+    :root {
+      --color-1: #000;
+      --color-2: #FFF;
+      --tap-zone-size: 32px;
+      --radius: 4px;
+      --mesh-step: 10px;
+    }
+    html, body {
+      padding: 0;
+      margin: 0;
+    }
+    [unresolved] {
+      display: block;
+      opacity: 0;
+    }
+  </style>
+  <app-index unresolved></app-index>
+</body>
+</html>
