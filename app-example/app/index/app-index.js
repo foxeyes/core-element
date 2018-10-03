@@ -1,4 +1,4 @@
-import { CoreElement } from '../../../src/core-element/core-element.js';
+import { CoreElement } from '../../../src/core-element.js';
 import { APP_INDEX_CSS } from './app-index.css.js';
 import { APP_INDEX_TPL } from './app-index.tpl.js';
 

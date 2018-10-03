@@ -1,4 +1,4 @@
-import { CoreElement } from '../../../../src/core-element/core-element.js';
+import { CoreElement } from '../../../../src/core-element.js';
 import { BUTTON_COM_CSS } from './button-com.css.js';
 import { BUTTON_COM_TPL } from './button-com.tpl.js';
 

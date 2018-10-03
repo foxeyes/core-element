@@ -1,4 +1,4 @@
-import { CoreElement } from '../../../../src/core-element/core-element.js';
+import { CoreElement } from '../../../../src/core-element.js';
 import { LAYOUT_COM_CSS } from './layout-com.css.js';
 import { LAYOUT_COM_TPL } from './layout-com.tpl.js';
 
