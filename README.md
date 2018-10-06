@@ -252,11 +252,15 @@ class MySuperFrameworkClass extends CoreElement {
 
 https://github.com/WebComponents/webcomponentsjs
 
-### Native Support (caniuse.com)
+#### Native Support (caniuse.com)
 
 * [Custom Elements](https://caniuse.com/#feat=custom-elementsv1)
 * [Shadow DOM](https://caniuse.com/#feat=shadowdomv1)
 * [ES Modules](https://caniuse.com/#feat=es6-module)
+
+#### With polyfills
+
+https://github.com/WebComponents/webcomponentsjs#browser-support
 
 
 ## Quick Installation
