@@ -36,6 +36,8 @@
     constructor() {
       super();
 
+      // `state` object describes all you need to manage component's state:
+      // attribute values, properties, elements contents and user action handlers.
       this.state = {
         timestamp: Date.now(),
         heading: '<h1>Some Heading</h1>',
@@ -50,6 +52,7 @@
 
     }
 
+    // awakes when custom DOM attribute `reversed` is changed or defined
     set reversed(newVal) {
       if (this.hasAttribute('reversed')) {
         this.setStateProperty('actions.click', () => {
@@ -60,6 +63,9 @@
 
   }
 
+  // Can be stored as external module with a template string inside.
+  // For correct syntax highlighting you will need IDE settings.
+  // For example, *.css.js files can be setted as HTML type. 
   MyComponent.styles = `
   <style>
     :host {
@@ -72,6 +78,9 @@
   </style>
   `;
 
+  // Can be stored as external module with a template string inside.
+  // For correct syntax highlighting you will need IDE settings.
+  // For example, *.tpl.js files can be setted as HTML type. 
   MyComponent.template = `
   <div bind="onclick: actions.click; className: class">
     <div bind="textContent: timestamp"></div>
@@ -81,10 +90,12 @@
   </div>
   `;
 
+  // All listed attributes will be accessible as property setters
   MyComponent.logicAttributes = [
     'reversed',
   ];
 
+  // `is` property defines custom tag name for component
   MyComponent.is = 'my-component';
 </script>
 
