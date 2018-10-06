@@ -133,7 +133,7 @@ But it's not recommended for production purposes in complex applications. It's b
 
 Example:
 ```html
-<div bind="textContent: name; className: styling.name; onclick: actions.click"></div>
+<div bind="textContent: name; className: styling.type; onclick: actions.click"></div>
 ```
 
 Template bindings can be described in key-value format. So, key - is a own element property and value - is a path to `state` object field.
