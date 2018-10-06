@@ -52,7 +52,7 @@
 
     }
 
-    // awakes when custom DOM attribute `reversed` is changed or defined
+    // awakes when custom DOM attribute `reversed` is changed, defined or removed
     set reversed(newVal) {
       if (this.hasAttribute('reversed')) {
         this.setStateProperty('actions.click', () => {
