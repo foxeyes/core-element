@@ -101,7 +101,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/imp
 
 As your development or prototyping workflow, you can resolve all your project dependencies natively, with a modern browser. You will need local server only.
 
-But it's not recommended for production purposes in complex applications. It's better to use module bundler, such as [webpack](https://webpack.js.org/).
+But it's not recommended for production purposes in complex applications. It's better to use module bundler, such as [webpack](https://webpack.js.org/) or [rollup.js](https://rollupjs.org/guide/en).
 
 ## Livecycle (native)
 
