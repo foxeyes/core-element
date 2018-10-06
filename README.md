@@ -250,4 +250,6 @@ https://github.com/WebComponents/webcomponentsjs
 
 `git submodule add -b master https://github.com/foxeyes/core-element core-element`
 
+Git-module approach allows you to put your dependency to any path in project structure you prefer, select branches and versions, create your own branches and use git tooling to manage code more flexible.
+
 [About git submodules](https://blog.github.com/2016-02-01-working-with-submodules/)
