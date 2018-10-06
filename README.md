@@ -147,20 +147,20 @@ External bindings is intended for external connections creation (outside of the 
 
 Example:
 ```html
-<tabs-ui current="v1" bind-id="my-binding" bind-prop="current">
-  <tab-ui value="v1" icon="default">Cat</tab-ui>
-  <tab-ui value="v2" icon="default">Dog</tab-ui>
-  <tab-ui value="v3" icon="default">Fish</tab-ui>
+<tabs-ui current="cat" bind-id="my-binding" bind-prop="current">
+  <tab-ui value="cat" icon="cat">Cat</tab-ui>
+  <tab-ui value="dog" icon="dog">Dog</tab-ui>
+  <tab-ui value="fish" icon="fish">Fish</tab-ui>
 </tabs-ui>
 
 <tabs-context bind-id="my-binding" bind-prop="current">
-  <div ctx="v1">
+  <div ctx="cat">
     CAT
   </div>
-  <div ctx="v2">
+  <div ctx="dog">
     DOG
   </div>
-  <div ctx="v3">
+  <div ctx="fish">
     FISH
   </div>
 </tabs-context>
