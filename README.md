@@ -38,6 +38,7 @@
 
       // `state` object describes all you need to manage component's state:
       // attribute values, properties, elements contents and user action handlers.
+      // You can use any custom structure you like
       this.state = {
         timestamp: Date.now(),
         heading: '<h1>Some Heading</h1>',
