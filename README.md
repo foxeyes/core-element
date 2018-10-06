@@ -222,6 +222,6 @@ https://github.com/WebComponents/webcomponentsjs
 
 ## Quick Installation
 
-`git submodule add https://github.com/foxeyes/core-element core-element`
+`git submodule add -b master https://github.com/foxeyes/core-element core-element`
 
 [About git submodules](https://blog.github.com/2016-02-01-working-with-submodules/)
