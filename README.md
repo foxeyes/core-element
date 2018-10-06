@@ -235,6 +235,19 @@ class MySuperFrameworkClass extends CoreElement {
 }
 ```
 
+## Syntax highlighting for styles & markup external files
+
+[VS Code](https://code.visualstudio.com/) `settings.json` example:
+
+```json
+{
+  "files.associations": {
+    "*.tpl.js": "html",
+    "*.css.js": "html"
+  }
+}
+```
+
 ## Browser Support & Polyfills 
 
 https://github.com/WebComponents/webcomponentsjs
