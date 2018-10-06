@@ -29,7 +29,7 @@
 
 ```html
 <script type="module">
-  import { CoreElement } from './core-element/core-element.js';
+  import { CoreElement } from './core-element/src/core-element.js';
 
   class MyComponent extends CoreElement {
 
