@@ -13,10 +13,10 @@
 
 ### Concept Basics:
 
-* Small and simple (KISS)
-* Flexible and extensible
+* Truly small and simple (KISS, please!)
+* Flexible and extensible. As nothing else
 * Based on modern web standards: [Custom Elements and Shadow DOM](https://www.webcomponents.org/specs)
-* Native DOM APIs - are cool!
+* Native DOM APIs - are cool and powerful! Stop hiding them!
 * Effective updates for DOM subtree nodes without fatty JavaScript abstractions
 * Native HTML & CSS syntax in templates
 * Code splitting for logic, markup and styles  - is a good practice
@@ -208,6 +208,20 @@ checkbox.onCheckedChange = (newValue) => { ... };
 `whenConnected` - asynchronous handler. Called after rendering started.
 
 `onStateUpdated` - state update stage handler.
+
+
+## Need more abilities?
+
+Just extend it!
+```javascript
+class MySuperFrameworkClass extends CoreElement {
+
+  coolFunction() {
+    ...
+  }
+
+}
+```
 
 ## Browser Support & Polyfills 
 

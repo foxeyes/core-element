@@ -59,7 +59,7 @@ TestElement.is = 'test-element';
       allArr.forEach(function(el, idx) {
         el.setStatePropertyLater('name', input.value, timeout);
       });
-      allArr[allArr.length -1].onStateUpdated = () => {
+      allArr[allArr.length - 1].onStateUpdated = () => {
         window.requestAnimationFrame(() => {
           console.log('Elements total: ' + elemetsTotal + '; Update time: ' + (Date.now() - start - timeout) / 1000 + 's');
         });
