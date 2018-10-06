@@ -179,7 +179,7 @@ Example:
 this['my-button'].onclick = () => { ... };
 ```
 
-Property `$` - can be used as a shortcut for the component's Shadow DOM.
+Property `$` - can be used as a shortcut for the component's [shadowRoot](https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot).
 
 Example:
 ```javascript
