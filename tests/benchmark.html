@@ -54,12 +54,11 @@ TestElement.is = 'test-element';
     let input = document.querySelector('input');
     input.oninput = () => {
       let start = Date.now();
-      let timeout = 200;
       allArr.forEach(function(el, idx) {
-        el.setStatePropertyLater('name', input.value, timeout);
+        el.setStateProperty('name', input.value);
         if (idx === allArr.length - 1) {
           window.requestAnimationFrame(() => {
-            console.log('Elements total: ' + elemetsTotal + '; Update time: ' + (Date.now() - start - timeout) / 1000 + 's');
+            console.log('Elements total: ' + elemetsTotal + '; Update time: ' + (Date.now() - start) / 1000 + 's');
           });
         }
       });
