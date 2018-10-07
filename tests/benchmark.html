@@ -7,27 +7,27 @@
   <title>Core Element Test</title>
 </head>
 <script type="module">
-import { CoreElement } from '../src/core-element.js';
-class TestElement extends CoreElement {}
-TestElement.styles = `
-<style>
-  :host {
-    display: block;
-  }
-  .cls {
-    color: #00c;
-  }
-  [size="big"] {
-    font-size: 24px;
-  }
-</style>
-`;
-TestElement.template = `
-<div bind="size: other.size; className: other.class">
-  <span bind="textContent: name"></span>&nbsp;<span bind="textContent: secondName"></span>
-</div>
-`;
-TestElement.is = 'test-element';
+  import { CoreElement } from '../src/core-element.js';
+  class TestElement extends CoreElement {}
+  TestElement.styles = `
+  <style>
+    :host {
+      display: block;
+    }
+    .cls {
+      color: #00c;
+    }
+    [size="big"] {
+      font-size: 24px;
+    }
+  </style>
+  `;
+  TestElement.template = `
+  <div bind="size: other.size; className: other.class">
+    <span bind="textContent: name"></span>&nbsp;<span bind="textContent: secondName"></span>
+  </div>
+  `;
+  TestElement.is = 'test-element';
 </script>
 <body>
   <input type="text">
@@ -49,14 +49,14 @@ TestElement.is = 'test-element';
       document.body.appendChild(tEl);
     }
 
-    let allArr = document.querySelectorAll('test-element');
+    let allTestElements = document.querySelectorAll('test-element');
 
     let input = document.querySelector('input');
     input.oninput = () => {
       let start = Date.now();
-      allArr.forEach(function(el, idx) {
+      allTestElements.forEach(function(el, idx) {
         el.setStateProperty('name', input.value);
-        if (idx === allArr.length - 1) {
+        if (idx === allTestElements.length - 1) {
           window.requestAnimationFrame(() => {
             console.log('Elements total: ' + elemetsTotal + '; Update time: ' + (Date.now() - start) / 1000 + 's');
           });
