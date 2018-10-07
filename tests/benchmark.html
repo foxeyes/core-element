@@ -26,7 +26,6 @@ TestElement.template = `
 <div bind="size: other.size; className: other.class">
   <span bind="textContent: name"></span>&nbsp;<span bind="textContent: secondName"></span>
 </div>
-<div id="repeat-ip"></div>
 `;
 TestElement.is = 'test-element';
 </script>
@@ -58,12 +57,12 @@ TestElement.is = 'test-element';
       let timeout = 200;
       allArr.forEach(function(el, idx) {
         el.setStatePropertyLater('name', input.value, timeout);
+        if (idx === allArr.length - 1) {
+          window.requestAnimationFrame(() => {
+            console.log('Elements total: ' + elemetsTotal + '; Update time: ' + (Date.now() - start - timeout) / 1000 + 's');
+          });
+        }
       });
-      allArr[allArr.length - 1].onStateUpdated = () => {
-        window.requestAnimationFrame(() => {
-          console.log('Elements total: ' + elemetsTotal + '; Update time: ' + (Date.now() - start - timeout) / 1000 + 's');
-        });
-      };
     };
 
     window.setTimeout(() => {
