@@ -80,7 +80,11 @@ class CoreElement extends HTMLElement {
             if (el[binding.propName] !== undefined) {
               el[binding.propName] = value;
             } else {
-              el.setAttribute(binding.propName, value);
+              if (value === false || value === null || value === undefined) {
+                el.removeAttribute(binding.propName);
+              } else {
+                el.setAttribute(binding.propName, value);
+              }
             }
           });
         }
@@ -119,7 +123,11 @@ class CoreElement extends HTMLElement {
           el[binding.propName] = value;
         }
       } else {
-        el.setAttribute(binding.propName, value);
+        if (value === false || value === null || value === undefined) {
+          el.removeAttribute(binding.propName);
+        } else {
+          el.setAttribute(binding.propName, value);
+        }
       }
     });
     let parent = this.__state;
