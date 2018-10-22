@@ -100,7 +100,7 @@ class CoreElement extends HTMLElement {
   }
 
   updateTemplateBindings() {
-    this.__parseTemplateBindings();
+    this.__parseTemplateBindings(this.$);
     if (this.__state) {
       this.state = this.__state;
     }
@@ -199,17 +199,6 @@ class CoreElement extends HTMLElement {
   }
 
   /**
-   * @param {boolean} val
-   */
-  static set bindable(val) {
-    this.__bindable = val;
-  }
-
-  static get bindable() {
-    return this.__bindable;
-  }
-
-  /**
    * @param {Array<string>} val
    */
   static set logicAttributes(val) {
@@ -230,24 +219,22 @@ class CoreElement extends HTMLElement {
     if (this.constructor['isShady']) {
       window['ShadyCSS'].styleElement(this);
     }
-    if (this.constructor['bindable']) {
-      if (!this.__bindProp) {
-        this.__bindProp = this.getAttribute('bind-prop');
-      }
-      this.__bindId = this.getAttribute('bind-id');
-      if (this.__bindProp && this.__bindId) {
-        this.__bindActive = true;
-        this.__bindHandler = (e) => {
-          if (this.__bindActive && e.detail.dispatcher !== this && e.detail.value !== this[this.__bindProp]) {
-            this.__bindActive = false;
-            window.setTimeout(() => {
-              this.__bindActive = true;
-            });
-            this[this.__bindProp] = e.detail.value;
-          }
+    if (!this.__bindProp) {
+      this.__bindProp = this.getAttribute('bind-prop');
+    }
+    this.__bindId = this.getAttribute('bind-id');
+    if (this.__bindProp && this.__bindId) {
+      this.__bindActive = true;
+      this.__bindHandler = (e) => {
+        if (this.__bindActive && e.detail.dispatcher !== this && e.detail.value !== this[this.__bindProp]) {
+          this.__bindActive = false;
+          window.setTimeout(() => {
+            this.__bindActive = true;
+          });
+          this[this.__bindProp] = e.detail.value;
         }
-        window.addEventListener(this.__bindId, this.__bindHandler);
       }
+      window.addEventListener(this.__bindId, this.__bindHandler);
     }
     
     window.setTimeout(() => {
@@ -267,7 +254,7 @@ class CoreElement extends HTMLElement {
   notify(propName, propValue = null) {
     let callbackName = 'on' + propName[0].toUpperCase() + propName.slice(1) + 'Change';
     this[callbackName] && this[callbackName](propValue);
-    if (this.constructor['bindable'] && this.__bindProp && this.__bindId && this.__bindActive) {
+    if (this.__bindProp && this.__bindId && this.__bindActive) {
       window.dispatchEvent(new CustomEvent(this.__bindId, {
         detail: {
           dispatcher: this,
