@@ -117,22 +117,7 @@ class CoreElement extends HTMLElement {
     if (!this.__stateBindingsMap) {
       return;
     }
-    let bindingsArr = this.__stateBindingsMap[path];
-    bindingsArr.forEach((binding) => {
-      let el = binding.element;
-      if (binding.propName.indexOf('@') === 0) {
-        let attrName = binding.propName.replace('@', '');
-        if (value === false || value === null || value === undefined) {
-          el.removeAttribute(attrName);
-        } else {
-          el.setAttribute(attrName, value);
-        }
-      } else {
-        if (el[binding.propName] !== value) {
-          el[binding.propName] = value;
-        }
-      }
-    });
+
     let parent = this.__state;
     let lastStep = path;
     let propPath = path.split('.');
@@ -144,6 +129,26 @@ class CoreElement extends HTMLElement {
       }
     });
     parent[lastStep] = value;
+
+    let bindingsArr = this.__stateBindingsMap[path];
+    if (bindingsArr) {
+      bindingsArr.forEach((binding) => {
+        let el = binding.element;
+        if (binding.propName.indexOf('@') === 0) {
+          let attrName = binding.propName.replace('@', '');
+          if (value === false || value === null || value === undefined) {
+            el.removeAttribute(attrName);
+          } else {
+            el.setAttribute(attrName, value);
+          }
+        } else {
+          if (el[binding.propName] !== value) {
+            el[binding.propName] = value;
+          }
+        }
+      });
+    }
+
     this.onStateUpdated && this.onStateUpdated();
   }
 
