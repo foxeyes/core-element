@@ -9,7 +9,7 @@
 * Component state management
 * Reactions on attribute changes
 * Property change callbacks
-* Work with Shadow DOM polyfills (FireFox < 63; Edge)
+* Work with Shadow DOM polyfills (Edge)
 
 ### Concept Basics:
 
