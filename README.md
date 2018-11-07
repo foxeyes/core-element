@@ -139,7 +139,10 @@ Example:
 
 Template bindings can be described in key-value format. So, key - is a own element property and value - is a path to `state` object field.
 
->ATTENTION: if element has no explicitly defined property (`undefined`) - value will be setted as attribute.
+For bind to attribute use `@`-prefix. Example:
+```html
+<div bind="@attribute: attributeValue"></div>
+```
 
 ## External Bindings
 
