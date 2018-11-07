@@ -77,14 +77,15 @@ class CoreElement extends HTMLElement {
             propPath.forEach((step) => {
               value = value[step];
             });
-            if (el[binding.propName] !== undefined) {
-              el[binding.propName] = value;
-            } else {
+            if (binding.propName.indexOf('@') === 0) {
+              let attrName = binding.propName.replace('@', '');
               if (value === false || value === null || value === undefined) {
-                el.removeAttribute(binding.propName);
+                el.removeAttribute(attrName);
               } else {
-                el.setAttribute(binding.propName, value);
+                el.setAttribute(attrName, value);
               }
+            } else {
+              el[binding.propName] = value;
             }
           });
         }
@@ -100,6 +101,7 @@ class CoreElement extends HTMLElement {
   }
 
   updateTemplateBindings() {
+    this.__stateBindingsMap = {};
     this.__parseTemplateBindings(this.$);
     if (this.__state) {
       this.state = this.__state;
@@ -118,15 +120,16 @@ class CoreElement extends HTMLElement {
     let bindingsArr = this.__stateBindingsMap[path];
     bindingsArr.forEach((binding) => {
       let el = binding.element;
-      if (el[binding.propName] !== undefined) {
-        if (el[binding.propName] !== value) {
-          el[binding.propName] = value;
+      if (binding.propName.indexOf('@') === 0) {
+        let attrName = binding.propName.replace('@', '');
+        if (value === false || value === null || value === undefined) {
+          el.removeAttribute(attrName);
+        } else {
+          el.setAttribute(attrName, value);
         }
       } else {
-        if (value === false || value === null || value === undefined) {
-          el.removeAttribute(binding.propName);
-        } else {
-          el.setAttribute(binding.propName, value);
+        if (el[binding.propName] !== value) {
+          el[binding.propName] = value;
         }
       }
     });
