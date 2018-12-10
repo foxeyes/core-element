@@ -59,6 +59,7 @@ class CoreElement extends HTMLElement {
     });
     this.__initialRender();
 
+    this.__whenComponentReady = null;
     this.whenConnected = null;
     this.onStateUpdated = null;
     
@@ -85,7 +86,13 @@ class CoreElement extends HTMLElement {
                 el.setAttribute(attrName, value);
               }
             } else {
-              el[binding.propName] = value;
+              if (el.tagName.includes('-')) {
+                window.setTimeout(() => {
+                  el[binding.propName] = value;
+                });
+              } else {
+                el[binding.propName] = value;
+              }
             }
           });
         }
