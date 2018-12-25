@@ -85,14 +85,12 @@ class CoreElement extends HTMLElement {
               } else {
                 el.setAttribute(attrName, value);
               }
-            } else {
-              if (el.tagName.includes('-')) {
-                window.setTimeout(() => {
-                  el[binding.propName] = value;
-                });
-              } else {
+            } else if (el.shadowRoot) {
+              window.setTimeout(() => {
                 el[binding.propName] = value;
-              }
+              });
+            } else {
+              el[binding.propName] = value;
             }
           });
         }
