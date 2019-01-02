@@ -198,14 +198,14 @@ let divsCollection = this.$.querySelectorAll('div');
 Example:
 ```javascript
 _dataHandler(data) {
-  this.setStateProperty('name', data.name);
+  this.setStateProperty('firstName', data.firstName);
   this.setStateProperty('secondName', data.secondName);
 }
 
 constructor() {
   super();
   this.state = {
-    name: '',
+    firstName: '',
     secondName: '',
   };
   this.defineAccessor('data', this._dataHandler);
