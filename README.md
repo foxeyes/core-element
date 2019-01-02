@@ -191,6 +191,30 @@ let divsCollection = this.$.querySelectorAll('div');
 
 ## Methods
 
+**Important!** Web component's native lifecycle in browser allows to set property BEFORE component's constructor is called. So, if this property needs to be processed with an accessor, it's value will be lost. To prevent this case, use following method:
+
+`defineAccessor(propertyName, handler)` - defines setter and getter for component's property.
+
+Example:
+```javascript
+_dataHandler(data) {
+  this.setStateProperty('name', data.name);
+  this.setStateProperty('secondName', data.secondName);
+}
+
+constructor() {
+  super();
+  this.state = {
+    name: '',
+    secondName: '',
+  };
+  this.defineAccessor('data', this._dataHandler);
+}
+
+```
+
+**State Updating**
+
 `setStateProperty(path, value)` - updates component's `state` property.
 
 Example:
